@@ -1,0 +1,7 @@
+body {
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  background-image: url(/img/snakebg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
