@@ -1,4 +1,4 @@
-// board
+// tabuleiro
 
 var blockSize = 25;
 var rows = 20;
@@ -6,7 +6,7 @@ var cols = 20;
 var board;
 var context;
 
-// snake head
+// cabeça da cobra
 var snakeX = blockSize * 5;
 var snakeY = blockSize * 5;
 
@@ -15,7 +15,7 @@ var velocityY = 0;
 
 var snakeBody = [];
 
-// food
+// comida
 var foodX;
 var foodY;
 
@@ -38,7 +38,7 @@ function update() {
   if (gameOver) {
     return;
   }
-
+  // adicionando sistema de XP
   context.fillStyle = "black";
   context.fillRect(0, 0, board.width, board.height);
 
@@ -57,6 +57,8 @@ function update() {
     snakeBody[0] = [snakeX, snakeY];
   }
 
+
+  // adicionando sistema de colisão
   context.fillStyle = "lime";
   snakeX += velocityX * blockSize;
   snakeY += velocityY * blockSize;
@@ -78,6 +80,7 @@ function update() {
   }
 }
 
+// mudando direções
 function changeDirection(e) {
   if (e.code == 'ArrowUp' && velocityY != 1) {
     velocityX = 0;
